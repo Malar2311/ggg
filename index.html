@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎨 CSS Art Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎨 CSS Art Playground</h1>
+  </header>
+
+  <main class="main-container">
+    <!-- Left panel: controls -->
+    <aside class="controls-panel">
+      <h2>Shape & Background</h2>
+      <div class="control">
+        <label>Shape</label>
+        <select id="shape">
+          <option value="rectangle">Rectangle</option>
+          <option value="circle">Circle</option>
+          <option value="ellipse">Ellipse</option>
+          <option value="triangle">Triangle</option>
+          <option value="star">Star</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <div class="control">
+          <label>Width</label>
+          <input type="range" id="width" min="50" max="300" value="150">
+        </div>
+        <div class="control">
+          <label>Height</label>
+          <input type="range" id="height" min="50" max="300" value="150">
+        </div>
+      </div>
+      <div class="control">
+        <label>Color</label>
+        <input type="color" id="color" value="#3498db">
+      </div>
+      <div class="control checkbox">
+        <label><input type="checkbox" id="useGradient"> Use Gradient</label>
+      </div>
+      <div class="gradient-controls">
+        <div class="control">
+          <label>Gradient Color 1</label>
+          <input type="color" id="gradientColor1" value="#3498db">
+        </div>
+        <div class="control">
+          <label>Gradient Color 2</label>
+          <input type="color" id="gradientColor2" value="#9b59b6">
+        </div>
+      </div>
+
+      <h2>Transform</h2>
+      <div class="control">
+        <label>Rotate (deg)</label>
+        <input type="range" id="rotate" min="0" max="360" value="0">
+      </div>
+      <div class="control">
+        <label>Scale</label>
+        <input type="range" id="scale" min="0.1" max="2" step="0.1" value="1">
+      </div>
+      <div class="control">
+        <label>Skew X (deg)</label>
+        <input type="range" id="skewX" min="-50" max="50" value="0">
+      </div>
+      <div class="control">
+        <label>Skew Y (deg)</label>
+        <input type="range" id="skewY" min="-50" max="50" value="0">
+      </div>
+
+      <h2>Box Shadows</h2>
+      <div id="shadowLayers" class="shadow-layers"></div>
+      <button id="addShadowBtn" class="btn small">➕ Add Shadow</button>
+
+      <h2>Text</h2>
+      <div class="control">
+        <label>Overlay Text</label>
+        <input type="text" id="overlayText" placeholder="Enter text...">
+      </div>
+
+      <h2>Extras</h2>
+      <div class="control checkbox">
+        <label><input type="checkbox" id="darkModeToggle"> Dark Mode</label>
+      </div>
+      <div class="control">
+        <label>Animation</label>
+        <select id="animationSelect">
+          <option value="none">None</option>
+          <option value="spin">Spin</option>
+          <option value="pulse">Pulse</option>
+          <option value="bounce">Bounce</option>
+        </select>
+      </div>
+
+      <h2>Save & Load</h2>
+      <div class="buttons">
+        <button id="saveDesignBtn" class="btn small">💾 Save Design</button>
+        <button id="loadDesignBtn" class="btn small">📂 Load Design</button>
+      </div>
+    </aside>
+
+    <!-- Right panel: preview & output -->
+    <section class="preview-panel">
+      <div class="preview">
+        <div id="art" class="art-box">
+          <span id="artText"></span>
+        </div>
+      </div>
+
+      <div class="output">
+        <h2>Generated CSS</h2>
+        <pre id="cssOutput"></pre>
+        <div class="buttons">
+          <button id="copyBtn" class="btn">📋 Copy CSS</button>
+          <button id="exportCssBtn" class="btn">⬇️ Export CSS</button>
+          <button id="exportImgBtn" class="btn">🖼 Export Image</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
